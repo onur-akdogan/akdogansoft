@@ -10,7 +10,10 @@
 
             background-image: url("assets/admingiris.jpg");
             /* Full height */
+            
             height: 100%;
+            
+            
 
             /* Center and scale the image nicely */
             background-position: center;
@@ -104,29 +107,40 @@
 <body>
 
 <div class="arkaplanresmi">
+
+
+
+
     <div class="giris-kutu">
+  
         <h2>Giriş Yap</h2>
+        
+      
         <form action="admin/netting/islem.php" method="post"><!--burası post edilerek kullanıcı sorgu yapılacak yer-->
             <div class="kullanici-box">
-                <input type="text" name="kullaniciAdi" required="">
+                <input type="text" name="kullanici_mail" required="">
                 <label>Kullanıcı Adı</label>
             </div>
             <div class="kullanici-box">
-                <input type="password" name="kullaniciSifre" required="">
+                <input type="password" name="kullanici_password" required="">
                 <label>Şifre</label>
             </div>
-            <button class="butonGiris" name="admingiris">
+            
+            <center>   <?php if ($_GET['durum']=="no") {?>
+					   <b style="color: red; font-size:14px;">Kullanıcı adı yada şifre hatalı...</b>
+						   <?php
+					   }?>
+        </center>
+     
+         <center>   
+             <button class="butonGiris" name="admingiris">
                 GİRİŞ YAP
             </button>
+        </center>
 
         </form>
     </div>
 </div>
-
-
-
-
-
 
 </body>
 </html>
