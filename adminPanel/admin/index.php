@@ -37,6 +37,21 @@ $urunSor->execute();
         <?php } ?>
        
 </table>
+<div class="center">
+<h3>Ürünler</h3>
+<div class="sayfa">
+    <div class="sliderKonum">
+        <div class="slider">
+        <?php   while($urunCek=$urunSor->fetch(PDO::FETCH_ASSOC)){ ?>
+            <a class="img-bir" href="img/700x400.png">
+            <img src="http://localhost/akdogansoft/<?php echo $urunCek['fotoYol'] ?>" alt="Resim Yok" width="200px">
+            </a>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+
+</div>
 </div>
 
 
@@ -52,7 +67,7 @@ $urunSor->execute();
 
 
 
-        </div>
+        
 
 
 </body>
