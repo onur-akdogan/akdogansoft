@@ -5,7 +5,7 @@ body {
 
 .appBar{
   width: 100%;
-  max-height: 20;
+  max-height: 20%;
 }
 .appBar .row{
   background-color: #25537a;
@@ -13,7 +13,7 @@ body {
   top: 0;
   left: 0;
   padding-top: 50px;
-  max-height: 40px;
+
   width: 100%;
  
 }
@@ -80,3 +80,86 @@ background-color:  #255681;
    height: 100%;
 }
 /* Header Tasarımı Bitti*/
+/* Form Tasarımı */
+.forms{
+padding-top: 5%;
+
+}
+.formstyle {
+margin-left: 230px;;
+  max-width: 100%;
+
+  background: #ffffff;
+  padding: 25px 15px 25px 10px;
+  font: 12px Georgia, "Times New Roman", Times, serif;
+  color: rgb(151, 147, 147);
+  text-shadow: 1px 1px 1px #FFF;
+
+}
+.formstyle h1 {
+  font-size: 25px;
+  padding: 0px 0px 10px 40px;
+  display: block;
+  border-bottom:1px solid #E4E4E4;
+  margin: -10px -15px 30px -10px;;
+  color: #888;
+}
+.formstyle h1>span {
+display: block;
+font-size: 11px;
+}
+
+.formstyle label>span {
+  float: left;
+  width: 20%;
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 10px;
+  color: #888;
+}
+.formstyle input[type="text"], .formstyle  .formstyle textarea, .formstyle select {
+border: 1px solid #DADADA;
+color: #888;
+height: 30px;
+margin-bottom: 16px;
+margin-right: 6px;
+margin-top: 2px;
+padding: 3px 3px 3px 5px;
+width: 70%;
+font-size: 12px;
+line-height:15px;
+box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.formstyle textarea{
+padding: 5px 3px 3px 5px;
+}
+.formstyle select {
+
+  appearance:none;
+  -webkit-appearance:none; 
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  width: 70%;
+  height: 35px;
+line-height: 25px;
+}
+.formstyle textarea{
+  height:300px;
+  width: 70%;
+}
+.formstyle .button {
+background-color: red;
+display: inline-block;
+padding: 10px 20px;
+color:#fff;
+font-size: 16px;
+text-decoration: none;
+margin-top: 40px;
+letter-spacing: 4px
+}
+
+
+
+
+
