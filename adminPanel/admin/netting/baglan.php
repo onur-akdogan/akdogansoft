@@ -1,7 +1,8 @@
 <?php
 try {
-    $db=new PDO("mysql:host=localhost;dbname=akdogansoft;charset=utf8",'root','Onur2000');
-    //echo "Veritabanı bağlantısı başarılı";
+    $db=new PDO("mysql:host=localhost;dbname=akdogansoft;charset=utf8",'root','onur.2000');
+
+
 
 
 } catch (PDOException $e) {
