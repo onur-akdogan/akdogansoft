@@ -19,7 +19,7 @@
     </div>
 
     <div class="menu">
-        <div class="logo"><a href=""><img src="title.png" alt="logo"></a></div>
+        <div class="logo"><a href=""><img src="assets/title.png" alt="logo"></a></div>
         <div class="SiraliMenu">
             <div class="menuContainer"><h3><a href="#">Ana Sayfa</a></h3></div>
             <div class="menuContainer"><h3><a href="#">Duyurular</a></h3></div>
