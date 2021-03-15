@@ -18,7 +18,7 @@ if (isset($_POST['admingiris'])) {
     }else{
         $_SESSION['kullanici_mail']=$kullanici_mail;
 
-        header("Location:../index.php");
+        header("Location:../index.html");
     }
 }
 ?>

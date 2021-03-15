@@ -1,0 +1,82 @@
+body {
+  background-color: white;
+
+}
+
+.appBar{
+  width: 100%;
+  max-height: 20;
+}
+.appBar .row{
+  background-color: #25537a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  max-height: 40px;
+  width: 100%;
+ 
+}
+.appBar .row ul {    
+  list-style-type:none;
+  margin-top: -30px;
+  padding-bottom: 20px;
+  }
+
+  .appBar .row li{
+      
+      float:right;
+
+      }
+  .appBar .row li a{
+      
+          text-decoration:none;
+          color:white;
+          padding-right:32px;
+          font-size:20px;
+          display:block;
+          
+          }
+      
+   .appBar .row li a:hover{
+              color:silver;
+  }
+            
+
+.menu{
+    background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 230px;
+  
+}
+.menu .logo img{
+  max-width: 230px;
+  padding-top:-120 ;
+
+}
+.menu .SiraliMenu .menuContainer{
+   min-height:  20%;
+}
+.menu .SiraliMenu .menuContainer h3{
+    color: white;
+    padding: 15px;
+}
+.menu .SiraliMenu .menuContainer a{
+    color: white;
+    text-decoration: none;
+
+}
+.menu .SiraliMenu .menuContainer :hover{
+background-color:  #255681;
+}
+.TamSayfa .icerikSayfa{
+   padding-top:50px;
+   padding-left: 250px;
+   color: turquoise;
+   width: 100%;
+   height: 100%;
+}
+/* Header Tasarımı Bitti*/
