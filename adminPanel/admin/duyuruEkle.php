@@ -8,22 +8,33 @@ include 'header.php';
         <h1>Duyuru Ekle 
             <span>Gerekli Bilgileri Lüften Eksiksiz Doldurunuz.</span>
         </h1>
+  
+        <label>
+        <span>Resim Ekle :</span>
+        <input type="file" id="resim" class="upload" accept="image/*" multiple/>
+        </label>
         <label>
             <span>Başlık :</span>
             <input id="baslik" type="text" name="baslik" placeholder="Başlık Giriniz" />
         </label>
+        
         <label>
             <span>Açıklama</span>
             <input id="aciklama" type="text" name="aciklama" placeholder="Ön açıklama Giriniz" />
         </label>
+
         <label>
             <span>Detay :</span>
             <textarea id="detay" name="detay" placeholder="Detay Giriniz"></textarea>
         </label> 
-        
-         <label>
+
+          <p>
+        <label>
             <span> </span> 
-            <input type="button" class="button" value="Ekle" /> 
-        </label>    
+      
+            <button class="button" name="ayarkaydet" value="Güncelle">Güncelle</button>
+        </label>   
+        </p>
+          
     </form>
 </div>

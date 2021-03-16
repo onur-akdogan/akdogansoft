@@ -17,10 +17,11 @@ body {
   width: 100%;
  
 }
+
 .appBar .row ul {    
   list-style-type:none;
   margin-top: -30px;
-  padding-bottom: 20px;
+
   }
 
   .appBar .row li{
@@ -28,11 +29,17 @@ body {
       float:right;
 
       }
+      .appBar .row li img{
+        border-radius: 30%;
+        height: 25px;
+        width: 25px;
+        padding-right: 20px;
+      }
   .appBar .row li a{
       
           text-decoration:none;
           color:white;
-          padding-right:32px;
+          padding-left:32px;
           font-size:20px;
           display:block;
           
@@ -117,7 +124,7 @@ font-size: 11px;
   margin-top: 10px;
   color: #888;
 }
-.formstyle input[type="text"], .formstyle  .formstyle textarea, .formstyle select {
+.formstyle input[type="text"],input[type="file"], .formstyle  .formstyle textarea, .formstyle select {
 border: 1px solid #DADADA;
 color: #888;
 height: 30px;
@@ -134,10 +141,7 @@ box-shadow: inset 0px 1px 4px #ECECEC;
 padding: 5px 3px 3px 5px;
 }
 .formstyle select {
-
   appearance:none;
-  -webkit-appearance:none; 
-  -moz-appearance: none;
   text-indent: 0.01px;
   text-overflow: '';
   width: 70%;
@@ -158,8 +162,25 @@ text-decoration: none;
 margin-top: 40px;
 letter-spacing: 4px
 }
+.listeleme{
+  margin-left: 230px;;
+  max-width: 100%;
 
-
-
-
-
+  background: #ffffff;
+  padding: 25px 15px 25px 10px;
+  font: 12px Georgia, "Times New Roman", Times, serif;
+  color: rgb(151, 147, 147);
+  text-shadow: 1px 1px 1px #FFF;
+}
+.listeleme .buttonEkle {
+  float:right;
+  background-color:#255681;
+ 
+  margin-top: 40px;
+  letter-spacing: 4px
+  }
+  .listeleme .buttonEkle a{
+    color:#fff;
+    text-decoration: none;
+    font-size: 22px;
+  }
