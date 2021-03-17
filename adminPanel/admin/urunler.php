@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 include 'header.php';
 ?>
@@ -12,3 +13,4 @@ include 'header.php';
  
   <button class="buttonEkle" value="Güncelle"><a href="urunEkle.php">Ürün Ekle</a></button>
 </div>
+=======
