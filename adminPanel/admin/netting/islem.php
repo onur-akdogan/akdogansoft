@@ -23,7 +23,36 @@ if (isset($_POST['admingiris'])) {
     }
 }
 
+if(isset($_FILES['dosya'])){
+    
 
+    $hata = $_FILES['dosya']['error'];
+    if($hata != 0) {
+       echo 'Yüklenirken bir hata gerçekleşmiş.';
+    } else {
+       $boyut = $_FILES['dosya']['size'];
+       if($boyut > (1024*1024*3)){
+          echo 'Dosya 3MB den büyük olamaz.';
+       } else {
+          $tip = $_FILES['dosya']['type'];
+          $isim = $_FILES['dosya']['name'];
+          $uzanti = explode('.', $isim);
+          $uzanti = $uzanti[count($uzanti)-1];
+          if($tip != 'image/jpeg' || $uzanti != 'jpg') {
+            $dosyayol=$_POST['dosyayol'];
+             echo 'Yanlızca JPG dosyaları gönderebilirsiniz.';
+             header("Location:../$dosyayol.php?durum=no");
+          } else {
+              $dosyayol=$_POST['dosyayol'];
+             $dosya = $_FILES['dosya']['tmp_name'];
+             copy($dosya, '../dosyalar/' . $_FILES['dosya']['name']);
+             header("Location:../$dosyayol.php?durum=$isim");
+
+       
+          }
+       }
+    }
+ }
 
 if (isset($_POST['ayarkaydet'])) {
 
@@ -85,7 +114,105 @@ if (isset($_POST['hakkimzdakaydet'])) {
     }
 }
 
+if (isset($_POST['urunkaydet'])) {
 
+    $urunkaydet=$db->prepare("INSERT INTO urunler set
+    UrunBaslik=:UrunBaslik,
+    urunIcerik=:urunIcerik,
+    urunFiyat=:urunFiyat");
+
+    $update=$urunkaydet->execute(array(
+        'UrunBaslik'=> $_POST['UrunBaslik'],
+        'urunIcerik'=>$_POST['urunIcerik'],
+        'urunFiyat'=>$_POST['urunFiyat']
+    ));
+    if ($update) {
+        header("Location:../urunEkle.php?durum=ok");
+    }
+    else {
+        header("Location:../urunEkle.php?durum=no");
+        
+    }
+}
+if (isset($_POST['hizmetkaydet'])) {
+
+    $hizmetkaydet=$db->prepare("INSERT INTO hizmetler set
+    hizmetBaslik=:hizmetBaslik,
+    hizmetIcerik=:hizmetIcerik,
+    hizmetFiyat=:hizmetFiyat");
+
+    $update=$hizmetkaydet->execute(array(
+        'hizmetBaslik'=> $_POST['hizmetBaslik'],
+        'hizmetIcerik'=>$_POST['hizmetIcerik'],
+        'hizmetFiyat'=>$_POST['hizmetFiyat']
+    ));
+    if ($update) {
+        header("Location:../hizmetEkle.php?durum=ok");
+    }
+    else {
+        header("Location:../hizmetEkle.php?durum=no");
+        
+    }
+}
+if (isset($_POST['sliderkaydet'])) {
+
+    $sliderkaydet=$db->prepare("INSERT INTO slider set
+ 
+ fotoYol=:fotoYol,
+ sliderBaslik=:sliderBaslik");
+
+    $update=$sliderkaydet->execute(array(
+        'fotoYol'=>$_POST['fotoYol'],
+        'sliderBaslik'=>$_POST['sliderBaslik']
+    ));
+    if ($update) {
+        header("Location:../sliderEkle.php?durum=ok");
+    }
+    else {
+        header("Location:../sliderEkle.php?durum=no");
+        
+    }
+}
+
+if (isset($_POST['referanskaydet'])) {
+
+    $sliderkaydet=$db->prepare("INSERT INTO referanslar set
+ 
+ referansBaslik=:referansBaslik");
+
+    $update=$sliderkaydet->execute(array(
+      
+        'referansBaslik'=>$_POST['referansBaslik']
+    ));
+    if ($update) {
+        header("Location:../referansEkle.php?durum=ok");
+    }
+    else {
+        header("Location:../referansEkle.php?durum=no");
+        
+    }
+}
+
+if (isset($_POST['kullanicikaydet'])) {
+
+    $kullanicikaydet=$db->prepare("INSERT INTO kullanici set
+    kullanici_ad=:kullanici_ad,
+    kullanici_mail=:kullanici_mail,
+    kullanici_password=:kullanici_password");
+
+    $update=$kullanicikaydet->execute(array(
+        'kullanici_ad'=> $_POST['kullanici_ad'],
+        'kullanici_mail'=>$_POST['kullanici_mail'],
+        'kullanici_password'=>$_POST['kullanici_password']
+    ));
+    if ($update) {
+        header("Location:../kullaniciEkle.php?durum=ok");
+    }
+    else {
+        header("Location:../kullaniciEkle.php?durum=no");
+        
+    }
+}
 
 
 

@@ -1,8 +1,6 @@
 <?php
 ob_start();
 session_start();include 'netting/baglan.php';
-
-
 $kullanicisor=$db->prepare("Select * from kullanici where kullanici_mail=:kullanici_mail");
 $kullanicisor->execute(array(
   'kullanici_mail'=>$_SESSION['kullanici_mail']
@@ -12,8 +10,6 @@ $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC);
 if ($say==0) {
   Header("Location:../index.php");
 exit;
-
-
 }
 
 //Hakkımızda verilerini çekmek için veriyi seçme
@@ -22,19 +18,12 @@ $hakkimizdaveriSorgula->execute(array(
   'id'=>1
 ));
 $hakkimizdaVeri=$hakkimizdaveriSorgula->fetch(PDO::FETCH_ASSOC);
-
-
-
 //Ayarlar verilerini çekmek için veriyi seçme
 $ayarlarveriSorgula=$db->prepare("Select * from siteayarlar where siteId=:id");
 $ayarlarveriSorgula->execute(array(
   'id'=>1
 ));
 $ayarlarVeri=$ayarlarveriSorgula->fetch(PDO::FETCH_ASSOC);
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -59,18 +48,17 @@ $ayarlarVeri=$ayarlarveriSorgula->fetch(PDO::FETCH_ASSOC);
             </ul>
         </div>
     </div>
-   
     <div class="menu">
         <div class="logo"><a href="index.php"><img src="assets/title.png" alt="logo"></a></div>
         <div class="SiraliMenu">
             <div class="menuContainer"><h3><a href="index.php">Ana Sayfa</a></h3></div>
             <div class="menuContainer"><h3><a href="duyurular.php">Duyurular</a></h3></div>
-            <div class="menuContainer"><h3><a href="#">Ürünler</a></h3></div>
-            <div class="menuContainer"><h3><a href="#">Hizmetler</a></h3></div>
-            <div class="menuContainer"><h3><a href="#">Slider İşlemleri</a></h3></div>
-            <div class="menuContainer"><h3><a href="#">Referanslar</a></h3></div>
-            <div class="menuContainer"><h3><a href="#">Kullanıcı İşlemleri</a></h3></div>
+            <div class="menuContainer"><h3><a href="urunler.php">Ürünler</a></h3></div>
+            <div class="menuContainer"><h3><a href="hizmetler.php">Hizmetler</a></h3></div>
+            <div class="menuContainer"><h3><a href="sliderlar.php">Slider İşlemleri</a></h3></div>
+            <div class="menuContainer"><h3><a href="referanslar.php">Referanslar</a></h3></div>
             <div class="menuContainer"><h3><a href="hakkimizda.php">Hakkımızda</a></h3></div>
+            <div class="menuContainer"><h3><a href="kullanicilar.php">Kullanıcı İşlemleri</a></h3></div>
             <div class="menuContainer"><h3><a href="ayarlar.php">Ayarlar</a></h3></div>
         </div>
     </div>

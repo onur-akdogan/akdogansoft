@@ -10,5 +10,5 @@ include 'header.php';
 
 <div class="listeleme">
  
-  <button class="buttonEkle" value="Güncelle"><a href="urunEkle.php">Ürün Ekle</a></button>
+  <button class="buttonEkle" value="Güncelle"><a href="hizmetEkle.php">Hizmet Ekle</a></button>
 </div>
