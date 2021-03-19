@@ -2,17 +2,20 @@
 include 'header.php';
 ?>
 
-<div class ="forms">
+<div class="forms">
 <form action="netting/islem.php" method="post" enctype="multipart/form-data" class="formstyle">
-   <input type="file" name="dosya" />
+
    <input type="hidden" name="dosyayol" value="referansEkle">
-   <input type="submit" value="Gönder" />
+   <input type="file" name="dosya" />
+ 
+    <button class="dosya" name="referanskaydet" value="Güncelle">Ekle</button>
 </form>
 </div>
 
+
 <div class="forms">
     <form action="netting/islem.php" method="post" class="formstyle">
-        <h1>Slider Ekle 
+        <h1>Referans Ekle 
 
             <span>Gerekli Bilgileri Lüften Eksiksiz Doldurunuz.
 
@@ -31,10 +34,7 @@ include 'header.php';
 </h1>
             </span>
          
-        <label>
-        <span>Resim Ekle :</span>
-        <input type="file" id="resim" class="upload" accept="image/*" multiple/>
-        </label>
+      
         <label>
             <span>Başlık :</span>
             <input id="referansBaslik" type="text" name="referansBaslik" placeholder="Başlık Giriniz" />

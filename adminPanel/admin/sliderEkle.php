@@ -5,7 +5,7 @@ include 'header.php';
 <form action="netting/islem.php" method="post" enctype="multipart/form-data" class="formstyle">
    <input type="file" name="dosya" />
    <input type="hidden" name="dosyayol" value="sliderEkle">
-   <input type="submit" value="Gönder" />
+   <input type="submit" value="Foto Ekle" />
 </form>
 </div>
 

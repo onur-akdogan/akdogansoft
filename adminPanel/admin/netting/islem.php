@@ -21,8 +21,51 @@ if (isset($_POST['admingiris'])) {
 
         header("Location:../index.php");
     }
+
 }
+
 if(isset($_FILES['dosya'])){
+    
+
+    $hata = $_FILES['dosya']['error'];
+    if($hata != 0) {
+       echo 'Yüklenirken bir hata gerçekleşmiş.';
+    } else {
+       $boyut = $_FILES['dosya']['size'];
+       if($boyut > (1024*1024*3)){
+          echo 'Dosya 3MB den büyük olamaz.';
+       } else {
+          $tip = $_FILES['dosya']['type'];
+          $isim = $_FILES['dosya']['name'];
+          $uzanti = explode('.', $isim);
+          $uzanti = $uzanti[count($uzanti)-1];
+          if($tip != 'image/jpeg' || $uzanti != 'jpg') {
+            $dosyayol=$_POST['dosyayol'];
+             echo 'Yanlızca JPG dosyaları gönderebilirsiniz.';
+             header("Location:../$dosyayol.php?durum=no");
+          } else {
+              $dosyayol=$_POST['dosyayol'];
+             $dosya = $_FILES['dosya']['tmp_name'];
+             copy($dosya, '../dosyalar/' . $_FILES['dosya']['name']);
+             header("Location:../$dosyayol.php?durum=$isim");
+
+       
+          }
+       }
+    }
+ }
+
+/*
+if(isset($_FILES['dosya'])){
+
+     $tip = $_FILES['dosya']['type'];
+     $isim = $_FILES['dosya']['name'];
+    echo $tmp_name = $_FILES['dosya']['type'];
+    echo $uzanti = explode('.', $isim);
+    print_r($uzanti);
+
+    @move_uploaded_file($tmp_name, "adminPanel/admin/netting/dosyalar/dosya/$isim");
+    exit;
 
     $hata = $_FILES['dosya']['error'];
     if($hata != 0) {
@@ -50,7 +93,8 @@ if(isset($_FILES['dosya'])){
           }
        }
     }
- }
+ }*/
+
 
 if (isset($_POST['duyuruekle'])) {
 
@@ -234,8 +278,4 @@ if (isset($_POST['kullanicikaydet'])) {
         
     }
 }
-
-
-
-
 ?>

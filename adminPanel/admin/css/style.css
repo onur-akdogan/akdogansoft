@@ -82,12 +82,13 @@ background-color:  #255681;
 .TamSayfa .icerikSayfa{
    padding-top:50px;
    padding-left: 250px;
-   color: turquoise;
+  
    width: 100%;
    height: 100%;
 }
 /* Header Tasarımı Bitti*/
 /* Form Tasarımı */
+
 .forms{
 padding-top: 5%;
 
