@@ -22,9 +22,7 @@ if (isset($_POST['admingiris'])) {
         header("Location:../index.php");
     }
 }
-
 if(isset($_FILES['dosya'])){
-    
 
     $hata = $_FILES['dosya']['error'];
     if($hata != 0) {
@@ -45,7 +43,7 @@ if(isset($_FILES['dosya'])){
           } else {
               $dosyayol=$_POST['dosyayol'];
              $dosya = $_FILES['dosya']['tmp_name'];
-             copy($dosya, '../dosyalar/' . $_FILES['dosya']['name']);
+             copy($dosya, 'dosyalar/' . $_FILES['dosya']['name']);
              header("Location:../$dosyayol.php?durum=$isim");
 
        
@@ -53,6 +51,29 @@ if(isset($_FILES['dosya'])){
        }
     }
  }
+
+if (isset($_POST['duyuruekle'])) {
+
+    $ayarkaydet=$db->prepare("INSERT INTO duyurular SET 
+    duyuruBaslik=:duyuruBaslik,
+    duyuruIcerik=:duyuruIcerik,
+    fotoYol=:fotoYol
+");
+
+    $update=$ayarkaydet->execute(array(
+        'duyuruBaslik'=> $_POST['duyuruBaslik'],
+        'duyuruIcerik'=>$_POST['duyuruIcerik'],
+        'fotoYol'=>$_POST['fotoYol']
+
+    ));
+    if ($update) {
+        header("Location:../ayarlar.php?durum=ok");
+    }
+    else {
+        header("Location:../ayarlar.php?durum=no");
+        
+    }
+}
 
 if (isset($_POST['ayarkaydet'])) {
 

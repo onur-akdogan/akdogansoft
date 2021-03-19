@@ -5,7 +5,7 @@ include 'header.php';
 <div class ="forms">
 <form action="netting/islem.php" method="post" enctype="multipart/form-data" class="formstyle">
    <input type="file" name="dosya" />
-   <input type="hidden" name="dosyayol" value="sliderEkle">
+   <input type="hidden" name="dosyayol" value="duyuruEkle">
    <input type="submit" value="Gönder" />
 </form>
 </div>
@@ -15,31 +15,23 @@ include 'header.php';
         <h1>Duyuru Ekle 
             <span>Gerekli Bilgileri Lüften Eksiksiz Doldurunuz.</span>
         </h1>
-  
         <label>
-        <span>Resim Ekle :</span>
-        <input type="file" id="resim" class="upload" accept="image/*" multiple/>
-        </label>
-        <label>
+        <input type="hidden" name="fotoYol" value="adminPanel/admin/dosyalar/<?php echo $fotoisim?>">
             <span>Başlık :</span>
-            <input id="baslik" type="text" name="baslik" placeholder="Başlık Giriniz" />
+            <input id="duyuruBaslik" type="text" name="duyuruBaslik" placeholder="Başlık Giriniz" />
         </label>
         
         <label>
             <span>Açıklama</span>
-            <input id="aciklama" type="text" name="aciklama" placeholder="Ön açıklama Giriniz" />
+            <input id="duyuruIcerik" type="text" name="duyuruIcerik" placeholder="Ön açıklama Giriniz" />
         </label>
 
-        <label>
-            <span>Detay :</span>
-            <textarea id="detay" name="detay" placeholder="Detay Giriniz"></textarea>
-        </label> 
 
-          <p>
+        
         <label>
             <span> </span> 
       
-            <button class="button" name="ayarkaydet" value="Güncelle">Güncelle</button>
+            <button class="button" name="duyuruekle" value="Güncelle">Ekle</button>
         </label>   
         </p>
           
