@@ -8,7 +8,7 @@ body {
   max-height: 20%;
 }
 .appBar .row{
-  background-color: #25537a;
+  background-color: #333;
   position: absolute;
   top: 0;
   left: 0;
@@ -30,7 +30,7 @@ body {
 
       }
       .appBar .row li img{
-        border-radius: 30%;
+   
         height: 25px;
         width: 25px;
         padding-right: 20px;
@@ -79,13 +79,7 @@ body {
 .menu .SiraliMenu .menuContainer :hover{
 background-color:  #255681;
 }
-.TamSayfa .icerikSayfa{
-   padding-top:50px;
-   padding-left: 250px;
-  
-   width: 100%;
-   height: 100%;
-}
+
 /* Header Tasarımı Bitti*/
 /* Form Tasarımı */
 
@@ -185,3 +179,15 @@ letter-spacing: 4px
     text-decoration: none;
     font-size: 22px;
   }
+
+
+
+  .TamSayfa .icerikSayfa{
+    padding-top:50px;
+    padding-left: 250px;
+   
+    width: 100%;
+    height: 100%;
+
+ }
+ 

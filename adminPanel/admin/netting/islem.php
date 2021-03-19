@@ -32,8 +32,8 @@ if(isset($_FILES['dosya'])){
        echo 'Yüklenirken bir hata gerçekleşmiş.';
     } else {
        $boyut = $_FILES['dosya']['size'];
-       if($boyut > (1024*1024*3)){
-          echo 'Dosya 3MB den büyük olamaz.';
+       if($boyut > (1024*1024*10)){
+          echo 'Dosya 10MB den büyük olamaz.';
        } else {
           $tip = $_FILES['dosya']['type'];
           $isim = $_FILES['dosya']['name'];
@@ -55,45 +55,6 @@ if(isset($_FILES['dosya'])){
     }
  }
 
-/*
-if(isset($_FILES['dosya'])){
-
-     $tip = $_FILES['dosya']['type'];
-     $isim = $_FILES['dosya']['name'];
-    echo $tmp_name = $_FILES['dosya']['type'];
-    echo $uzanti = explode('.', $isim);
-    print_r($uzanti);
-
-    @move_uploaded_file($tmp_name, "adminPanel/admin/netting/dosyalar/dosya/$isim");
-    exit;
-
-    $hata = $_FILES['dosya']['error'];
-    if($hata != 0) {
-       echo 'Yüklenirken bir hata gerçekleşmiş.';
-    } else {
-       $boyut = $_FILES['dosya']['size'];
-       if($boyut > (1024*1024*3)){
-          echo 'Dosya 3MB den büyük olamaz.';
-       } else {
-          $tip = $_FILES['dosya']['type'];
-          $isim = $_FILES['dosya']['name'];
-          $uzanti = explode('.', $isim);
-          $uzanti = $uzanti[count($uzanti)-1];
-          if($tip != 'image/jpeg' || $uzanti != 'jpg') {
-            $dosyayol=$_POST['dosyayol'];
-             echo 'Yanlızca JPG dosyaları gönderebilirsiniz.';
-             header("Location:../$dosyayol.php?durum=no");
-          } else {
-              $dosyayol=$_POST['dosyayol'];
-             $dosya = $_FILES['dosya']['tmp_name'];
-             copy($dosya, 'dosyalar/' . $_FILES['dosya']['name']);
-             header("Location:../$dosyayol.php?durum=$isim");
-
-       
-          }
-       }
-    }
- }*/
 
 
 if (isset($_POST['duyuruekle'])) {
@@ -111,10 +72,10 @@ if (isset($_POST['duyuruekle'])) {
 
     ));
     if ($update) {
-        header("Location:../ayarlar.php?durum=ok");
+        header("Location:../duyuruEkle.php?durum=ok");
     }
     else {
-        header("Location:../ayarlar.php?durum=no");
+        header("Location:../duyuruEkle.php?durum=no");
         
     }
 }
@@ -184,11 +145,13 @@ if (isset($_POST['urunkaydet'])) {
     $urunkaydet=$db->prepare("INSERT INTO urunler set
     UrunBaslik=:UrunBaslik,
     urunIcerik=:urunIcerik,
+    fotoYol=:fotoYol,
     urunFiyat=:urunFiyat");
 
     $update=$urunkaydet->execute(array(
         'UrunBaslik'=> $_POST['UrunBaslik'],
         'urunIcerik'=>$_POST['urunIcerik'],
+        'fotoYol'=>$_POST['fotoYol'],
         'urunFiyat'=>$_POST['urunFiyat']
     ));
     if ($update) {
@@ -204,11 +167,13 @@ if (isset($_POST['hizmetkaydet'])) {
     $hizmetkaydet=$db->prepare("INSERT INTO hizmetler set
     hizmetBaslik=:hizmetBaslik,
     hizmetIcerik=:hizmetIcerik,
+    fotoYol=:fotoYol,
     hizmetFiyat=:hizmetFiyat");
 
     $update=$hizmetkaydet->execute(array(
         'hizmetBaslik'=> $_POST['hizmetBaslik'],
         'hizmetIcerik'=>$_POST['hizmetIcerik'],
+        'fotoYol'=>$_POST['fotoYol'],
         'hizmetFiyat'=>$_POST['hizmetFiyat']
     ));
     if ($update) {
@@ -241,12 +206,12 @@ if (isset($_POST['sliderkaydet'])) {
 
 if (isset($_POST['referanskaydet'])) {
 
-    $sliderkaydet=$db->prepare("INSERT INTO referanslar set
- 
+    $referanskaydet=$db->prepare("INSERT INTO referanslar set
+    fotoYol=:fotoYol,
  referansBaslik=:referansBaslik");
 
-    $update=$sliderkaydet->execute(array(
-      
+    $update=$referanskaydet->execute(array(
+        'fotoYol'=>$_POST['fotoYol'],
         'referansBaslik'=>$_POST['referansBaslik']
     ));
     if ($update) {
@@ -263,11 +228,13 @@ if (isset($_POST['kullanicikaydet'])) {
     $kullanicikaydet=$db->prepare("INSERT INTO kullanici set
     kullanici_ad=:kullanici_ad,
     kullanici_mail=:kullanici_mail,
+    kullanici_resim=:kullanici_resim,
     kullanici_password=:kullanici_password");
 
     $update=$kullanicikaydet->execute(array(
         'kullanici_ad'=> $_POST['kullanici_ad'],
         'kullanici_mail'=>$_POST['kullanici_mail'],
+        'kullanici_resim'=>$_POST['kullanici_resim'],
         'kullanici_password'=>$_POST['kullanici_password']
     ));
     if ($update) {

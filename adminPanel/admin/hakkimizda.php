@@ -5,7 +5,7 @@ include 'header.php';
 
 <div class="forms">
     <form action="netting/islem.php" method="post" class="formstyle">
-        <h1>Ayarlar 
+        <h1>Hakkımızda 
 
             <span>Gerekli Bilgileri Lüften Eksiksiz Doldurunuz.
             <?php echo $hakkimizdaVeri['hakkimzda_baslik'];?>

@@ -26,6 +26,16 @@ $ayarlarveriSorgula->execute(array(
 $ayarlarVeri=$ayarlarveriSorgula->fetch(PDO::FETCH_ASSOC);
 ?>
 
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +50,7 @@ $ayarlarVeri=$ayarlarveriSorgula->fetch(PDO::FETCH_ASSOC);
     <div class="appBar">
         <div class="row">
         <ul>
-        <li><img src="<?php echo $kullanicicek['kullanici_resim'];?>" alt="pp"> </li>
+        <li><img src="http://localhost/akdogansoft/<?php echo $kullanicicek['kullanici_resim'];?>" alt="pp"> </li>
      
             <li><a href="#"><?php echo $kullanicicek['kullanici_ad'];?></a></li>
          

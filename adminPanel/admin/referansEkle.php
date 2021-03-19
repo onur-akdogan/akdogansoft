@@ -2,16 +2,18 @@
 include 'header.php';
 ?>
 
-<div class="forms">
+
+<div class ="forms">
 <form action="netting/islem.php" method="post" enctype="multipart/form-data" class="formstyle">
 
+<span>Resim Ekle :</span>
+ <input type="file" name="dosya" />
    <input type="hidden" name="dosyayol" value="referansEkle">
-   <input type="file" name="dosya" />
+<span>   <button class="button">Ekle</button></span>
  
-    <button class="dosya" name="referanskaydet" value="Güncelle">Ekle</button>
+   
 </form>
 </div>
-
 
 <div class="forms">
     <form action="netting/islem.php" method="post" class="formstyle">
@@ -20,7 +22,7 @@ include 'header.php';
             <span>Gerekli Bilgileri Lüften Eksiksiz Doldurunuz.
 
             <?php 
-
+$fotoisim=$_GET['durum'];
                     if ($_GET['durum']=="ok") {?>
 
                     <h4>     <b style="color:green;">İşlem Başarılı...</b></h4>
@@ -39,6 +41,7 @@ include 'header.php';
             <span>Başlık :</span>
             <input id="referansBaslik" type="text" name="referansBaslik" placeholder="Başlık Giriniz" />
         </label>
+        <input type="hidden" name="fotoYol" value="adminPanel/admin/dosyalar/<?php echo $fotoisim?>">
           <p>
         <label>
             <span> </span> 

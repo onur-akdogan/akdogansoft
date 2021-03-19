@@ -1,14 +1,18 @@
 <?php 
 include 'header.php';
 ?>
+
 <div class ="forms">
 <form action="netting/islem.php" method="post" enctype="multipart/form-data" class="formstyle">
-   <input type="file" name="dosya" />
+
+<span>Resim Ekle :</span>
+ <input type="file" name="dosya" />
    <input type="hidden" name="dosyayol" value="sliderEkle">
-   <input type="submit" value="Foto Ekle" />
+<span>   <button class="button">Ekle</button></span>
+ 
+   
 </form>
 </div>
-
 <div class="forms">
     <form action="netting/islem.php" method="post" class="formstyle">
         <h1>Slider Ekle 
