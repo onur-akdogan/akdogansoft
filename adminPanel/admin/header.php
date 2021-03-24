@@ -24,18 +24,40 @@ $ayarlarveriSorgula->execute(array(
   'id'=>1
 ));
 $ayarlarVeri=$ayarlarveriSorgula->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+
+
+$urunSor=$db->prepare("SELECT * FROM urunler");
+$urunSor->execute();
+
+$hizmetSor=$db->prepare("SELECT * FROM hizmetler");
+
+$hizmetSor->execute();
+
+
+$sliderSor=$db->prepare("SELECT * FROM slider");
+
+$sliderSor->execute();
+
+$duyuruSor=$db->prepare("SELECT * FROM duyurular");
+
+$duyuruSor->execute();
+
+$referansSor=$db->prepare("SELECT * FROM referanslar");
+
+$referansSor->execute();
+
+
+$kullanicilariSor=$db->prepare("SELECT * FROM kullanici");
+
+$kullanicilariSor->execute();
+
+
+
 ?>
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,18 +68,22 @@ $ayarlarVeri=$ayarlarveriSorgula->fetch(PDO::FETCH_ASSOC);
     <title>Admin Paneli</title>
 </head>
 <body>
+
  <div class="TamSayfa">
-    <div class="appBar">
+ <div class="appBar">
         <div class="row">
         <ul>
+
         <li><img src="http://localhost/akdogansoft/<?php echo $kullanicicek['kullanici_resim'];?>" alt="pp"> </li>
-     
+      
             <li><a href="#"><?php echo $kullanicicek['kullanici_ad'];?></a></li>
          
             <li><a href="">Hoşgeldin</a></li>
             </ul>
-        </div>
-    </div>
+            </div>
+
+       
+            
     <div class="menu">
         <div class="logo"><a href="index.php"><img src="assets/title.png" alt="logo"></a></div>
         <div class="SiraliMenu">

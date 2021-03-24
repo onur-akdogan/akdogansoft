@@ -41,14 +41,14 @@ if(isset($_FILES['dosya'])){
           $uzanti = $uzanti[count($uzanti)-1];
           if($tip != 'image/jpeg' || $uzanti != 'jpg') {
             $dosyayol=$_POST['dosyayol'];
-             echo 'Yanlızca JPG dosyaları gönderebilirsiniz.';
+         
              header("Location:../$dosyayol.php?durum=no");
           } else {
               $dosyayol=$_POST['dosyayol'];
              $dosya = $_FILES['dosya']['tmp_name'];
              copy($dosya, '../dosyalar/' . $_FILES['dosya']['name']);
              header("Location:../$dosyayol.php?durum=$isim");
-
+           
        
           }
        }
@@ -73,9 +73,11 @@ if (isset($_POST['duyuruekle'])) {
     ));
     if ($update) {
         header("Location:../duyuruEkle.php?durum=ok");
+      
     }
     else {
         header("Location:../duyuruEkle.php?durum=no");
+
         
     }
 }
@@ -106,9 +108,11 @@ if (isset($_POST['ayarkaydet'])) {
     ));
     if ($update) {
         header("Location:../ayarlar.php?durum=ok");
+    
     }
     else {
         header("Location:../ayarlar.php?durum=no");
+
         
     }
 }
@@ -133,9 +137,11 @@ if (isset($_POST['hakkimzdakaydet'])) {
     ));
     if ($update) {
         header("Location:../hakkimizda.php?durum=ok");
+   
     }
     else {
         header("Location:../hakkimizda.php?durum=no");
+     
         
     }
 }
@@ -156,12 +162,16 @@ if (isset($_POST['urunkaydet'])) {
     ));
     if ($update) {
         header("Location:../urunEkle.php?durum=ok");
+        
     }
     else {
         header("Location:../urunEkle.php?durum=no");
         
+        
     }
 }
+
+
 if (isset($_POST['hizmetkaydet'])) {
 
     $hizmetkaydet=$db->prepare("INSERT INTO hizmetler set
@@ -178,9 +188,11 @@ if (isset($_POST['hizmetkaydet'])) {
     ));
     if ($update) {
         header("Location:../hizmetEkle.php?durum=ok");
+
     }
     else {
         header("Location:../hizmetEkle.php?durum=no");
+ 
         
     }
 }
@@ -197,10 +209,11 @@ if (isset($_POST['sliderkaydet'])) {
     ));
     if ($update) {
         header("Location:../sliderEkle.php?durum=ok");
+    
     }
     else {
         header("Location:../sliderEkle.php?durum=no");
-        
+     
     }
 }
 
@@ -216,9 +229,11 @@ if (isset($_POST['referanskaydet'])) {
     ));
     if ($update) {
         header("Location:../referansEkle.php?durum=ok");
+        
     }
     else {
         header("Location:../referansEkle.php?durum=no");
+       
         
     }
 }
@@ -239,10 +254,13 @@ if (isset($_POST['kullanicikaydet'])) {
     ));
     if ($update) {
         header("Location:../kullaniciEkle.php?durum=ok");
+        
     }
     else {
         header("Location:../kullaniciEkle.php?durum=no");
+  
         
     }
 }
+
 ?>
