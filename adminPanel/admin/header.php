@@ -74,7 +74,8 @@ $kullanicilariSor->execute();
         <div class="row">
         <ul>
 
-        <li><img src="http://localhost/akdogansoft/<?php echo $kullanicicek['kullanici_resim'];?>" alt="pp"> </li>
+        <li><img src="http://localhost/akdogansoft/<?php echo $kullanicicek['kullanici_resim'];?>" alt="pp">
+         </li>
       
             <li><a href="#"><?php echo $kullanicicek['kullanici_ad'];?></a></li>
          

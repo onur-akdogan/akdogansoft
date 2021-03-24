@@ -33,7 +33,7 @@ include 'header.php';
           ?>
         <tr>
         <td><?php echo $sliderCek['sliderId'] ?></td>
-          <td><img src="http://localhost/akdogansoft/<?php echo $sliderCek['fotoYol'] ?>" alt="Resim Yok" width="100px"></td>
+          <td><img src="http://localhost/akdogansoft/<?php echo $sliderCek['fotoYol'] ?>" alt="Resim Yok" width="200px"></td>
           <td><?php echo $sliderCek['sliderBaslik'] ?></td>
    
       
