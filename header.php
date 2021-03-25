@@ -2,7 +2,7 @@
 <?php
 
 include 'adminPanel/admin/netting/baglan.php';
-$sliderSor=$db->prepare("SELECT * FROM slider ORDER BY sliderId desc");
+$sliderSor=$db->prepare("SELECT * FROM slider ORDER BY sliderId desc LIMIT 3");
 
 
 $sliderSor->execute();
@@ -19,10 +19,13 @@ $sliderSor->execute();
 </head>
 <body>
     <div class="topnav">
+    
+ <img src="adminPanel/admin/assets/title.png" alt="resim" width="70px">
         <a href="#anasayfa">AnaSayfa</a>
         <a href="#news">Hizmetlerimiz</a>
         <a href="#contact">Ürünlerimiz</a>
         <a href="#about">Hakkımızda</a>
         <a href="#about">Referanslarımız</a>
         <a href="#about">Bize Ulaş</a>
+     
       </div>

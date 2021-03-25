@@ -1,5 +1,5 @@
 body{
-  background-color: white;
+
     margin: 0;
 }
 .topnav {
@@ -15,50 +15,63 @@ body{
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
+    
     text-decoration: none;
     font-size: 17px;
+  }
+  .topnav  img {
+    float: left;
+  
+
   }
   
   .topnav a:hover {
     background-color: blueviolet;
     color: white;
   }
+
+
   
   .sayfa{
-    width: 100%;
-    margin: 0 auto;
-}.sliderKonum{
+
+    padding: 0;
+    margin: 0;
+    background-color: blueviolet;
+
+}
+  .sliderKonum{
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 450px;
     overflow: hidden;
-    background-color: blueviolet;
 }
-
-.sliderKonum > .slider{
-    position: absolute;
-    left:0px;
-    width: 2800px;
-    height: 400px;
-    -webkit-animation-duration: 10s;
-    -webkit-animation-name: sliders;
-    -webkit-animation-iteration-count:infinite;
-    -moz-animation-duration: 10s;
-    -moz-animation-name: sliders;
-    -moz-animation-iteration-count:infinite;
-    -ms-animation-duration: 10s;
-    -ms-animation-name: sliders;
-    -ms-animation-iteration-count:infinite;
-    animation-duration: 10s;
-    animation-iteration-count:infinite;
-  }
+ 
+  .img-bir{left: 0px;}
 
    
-      @-webkit-keyframes sliders{
-        0% {left:0px;}
-        10% {left:0px;}
-        20% {left:-700px;}
-        30% {left:-700px;}
-        40% {left:-1400px;}
-        50% {left:-1400px;}
+   
+      .sliderKonum > .slider{
+        position: absolute;
+        left:0px;
+        width: 300%;
+        height: 100%;
+        -webkit-animation-duration: 30s;
+        -webkit-animation-name: sliders;
+        -webkit-animation-iteration-count:infinite;
+        -moz-animation-duration: 30s;
+        -moz-animation-name: sliders;
+        -moz-animation-iteration-count:infinite;
+        -ms-animation-duration: 30s;
+        -ms-animation-name: sliders;
+        -ms-animation-iteration-count:infinite;
+        animation-duration: 30s;
+        animation-iteration-count:infinite;
       }
+  @-webkit-keyframes sliders{
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:-100%;}
+    30% {left:-100%;}
+    40% {left:-200%;}
+    50% {left:-200%;}
+  }  
