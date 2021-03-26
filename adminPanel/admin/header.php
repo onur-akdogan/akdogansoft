@@ -56,6 +56,9 @@ $kullanicilariSor=$db->prepare("SELECT * FROM kullanici");
 $kullanicilariSor->execute();
 
 
+$mesajlariSor=$db->prepare("SELECT * FROM mesaj");
+
+$mesajlariSor->execute();
 
 ?>
 <!DOCTYPE html>
@@ -89,6 +92,7 @@ $kullanicilariSor->execute();
         <div class="logo"><a href="index.php"><img src="assets/title.png" alt="logo"></a></div>
         <div class="SiraliMenu">
             <div class="menuContainer"><h3><a href="index.php">Ana Sayfa</a></h3></div>
+            <div class="menuContainer"><h3><a href="gelenMesajlar.php">Gelen Mesajlar</a></h3></div>
             <div class="menuContainer"><h3><a href="duyurular.php">Duyurular</a></h3></div>
             <div class="menuContainer"><h3><a href="urunler.php">Ürünler</a></h3></div>
             <div class="menuContainer"><h3><a href="hizmetler.php">Hizmetler</a></h3></div>

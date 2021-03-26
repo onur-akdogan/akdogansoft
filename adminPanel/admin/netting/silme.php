@@ -116,5 +116,19 @@ catch(PDOException $e) {
     
 }
 
+$musteriId= $_GET["musteriId"];
+try {
+  
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sqlquery = "DELETE FROM mesaj WHERE musteriId=$musteriId";
+    $db->exec($sqlquery);
+    header("Location:../gelenMesajlar.php?durum=ok");
+    exit;
+}
+catch(PDOException $e) {
+    header("Location:../gelenMesajlar.php?durum=no");
+}
+
 
 ?>

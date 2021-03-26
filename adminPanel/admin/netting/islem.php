@@ -263,4 +263,30 @@ if (isset($_POST['kullanicikaydet'])) {
     }
 }
 
+
+if (isset($_POST['mesajKaydet'])) {
+
+    $mesajKaydet=$db->prepare("INSERT INTO mesaj set
+    musteriAdi=:musteriAdi,
+    musteriMail=:musteriMail,
+    musteriKonu=:musteriKonu,
+    musteriIcerik=:musteriIcerik");
+
+    $update=$mesajKaydet->execute(array(
+        'musteriAdi'=> $_POST['musteriAdi'],
+        'musteriMail'=>$_POST['musteriMail'],
+        'musteriKonu'=>$_POST['musteriKonu'],
+        'musteriIcerik'=>$_POST['musteriIcerik']
+    ));
+    if ($update) {
+        header("Location:../../../bizeulas.php?durum=ok");
+        
+    }
+    else {
+        header("Location:../../../bizeulas.php?durum=no");
+  
+        
+    }
+}
+
 ?>
