@@ -36,6 +36,14 @@ $ayarlarveriSorgula->execute(array(
 $ayarlarVeri=$ayarlarveriSorgula->fetch(PDO::FETCH_ASSOC);
 
 
+
+$hakkimizdaveriSorgula=$db->prepare("Select * from hakkimizda where hakkimizda_id=:id");
+$hakkimizdaveriSorgula->execute(array(
+  'id'=>1
+));
+$hakkimizdaVeri=$hakkimizdaveriSorgula->fetch(PDO::FETCH_ASSOC);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
