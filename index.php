@@ -3,29 +3,28 @@ include 'header.php';
 
 
 ?>
+ 
+<div class="slideshow-container">
+<?php   while($sliderCek=$sliderSor->fetch(PDO::FETCH_ASSOC)){ ?>
+<div class="mySlides fade">
+  <img src="http://localhost/akdogansoft/<?php echo $sliderCek['fotoYol'] ?>" style="width:100%; height: 412px;">
+  <div class="text"><?php echo $sliderCek['sliderBaslik'] ?></div>
+</div>
+<?php } ?>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
+</div>
+<br>
 
-
-
-
-
-
-<div class="sayfa">
-    <div class="sliderKonum">
-        <div class="slider">
-        <?php   while($sliderCek=$sliderSor->fetch(PDO::FETCH_ASSOC)){ ?>
-            <a class="img-bir">
-                <img src="http://localhost/akdogansoft/<?php echo $sliderCek['fotoYol'] ?>" alt="resim" width="32.9%" height="100%">
-            </a>
-      
-            <?php } ?>
-           
-        </div>
-    </div>
-</div>   
-
-
-<br><br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+</div>
 
 <div class="basliklar">
   
@@ -105,3 +104,4 @@ include 'header.php';
 
 include 'footer.php';
 ?>
+

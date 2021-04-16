@@ -2,7 +2,7 @@
 <?php
 
 include 'adminPanel/admin/netting/baglan.php';
-$sliderSor=$db->prepare("SELECT * FROM slider ORDER BY sliderId desc LIMIT 3");
+$sliderSor=$db->prepare("SELECT * FROM slider ORDER BY sliderId desc LIMIT 6");
 $sliderSor->execute();
 
 
@@ -55,6 +55,7 @@ $hakkimizdaVeri=$hakkimizdaveriSorgula->fetch(PDO::FETCH_ASSOC);
     <meta name="description" content="<?php echo $ayarlarVeri['siteaciklama'];?>" />
     <link rel="stylesheet" href="css/style.css">
     <title><?php echo $ayarlarVeri['sitebaslik'];?></title>
+    
 </head>
 <body>
     <div class="topnav">
